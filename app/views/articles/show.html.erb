@@ -1,0 +1,29 @@
+<center>
+<p style="color: green" class="notice"><%= notice %></p>
+<table id="articles">
+  <tr>
+  <th width=150>Title</th>
+  <th width=250>Body</th>
+  <th width=100>Published</th>
+  <th width=130>Options</th>
+  </tr>
+<%= render @article %>
+</table>
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+  <h5>Choose from options below:</h5>
+
+<div>
+<%= button_to "Edit this article", edit_article_path(@article), method: :get %>
+<div class="spacer"></div>
+
+  <%= button_to "Delete this article", @article, method: :delete, class: "delete" %>
+
+  <div class="spacer"></div>
+
+
+  <%= button_to "Show All Articles", articles_path, method: :get %>
+
+</div>
+</center>

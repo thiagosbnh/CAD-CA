@@ -1,0 +1,20 @@
+
+<table id="<%= dom_id article %>">
+  <tr>
+    <td width="150">
+        <%= article.title %>
+    </td>
+
+    <td width="250">
+        <%= article.body %>
+    </td>
+
+    <td width="100">
+      <%= article.published ? "<strong>Yes</strong>".html_safe : "<i>No</i>".html_safe %>
+    </td>
+
+    <td width="130">
+        <%= link_to "Edit / Delete", article %>
+    </td>
+  </tr>
+</table>

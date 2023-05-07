@@ -1,0 +1,11 @@
+<center>
+<h1>New article</h1>
+
+<%= render "form", article: @article %>
+
+<br>
+
+<div>
+<%= button_to "Show All Articles", articles_path, method: :get %>
+</div>
+</center>

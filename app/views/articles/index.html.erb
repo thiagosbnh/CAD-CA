@@ -1,0 +1,26 @@
+<center>
+<p style="color: green"><%= notice %></p>
+
+<h1>List of Articles</h1>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<%= form_with(url: articles_path, method: :get) do |f| %>
+  <%= f.select :published, options_for_select([[ 'All Articles', 'all' ], ['Only Published', 'true'], ['Only Not Published', 'false']], params[:published] || 'all'), {}, class: "filterselect" %>
+  <%= f.submit "Filter", class: "filterbutton" %>
+<% end %>
+<div class="spacer"></div>
+<table id="articles">
+  <tr>
+  <th width="150">Title</th>
+  <th width="250">Body</th>
+  <th width="100">Published</th>
+  <th width="130">Options</th>
+  </tr>
+  <% @articles.each do |article| %>
+    <%= render article %>
+  <% end %>
+</table>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<%= button_to "New article", new_article_path, method: :get, class: "custom-class" %>
+</center>
